@@ -8,8 +8,12 @@ function create() {
     game.setGravity(DEFAULT_GRAVITY);
     for (var x=0; x < 5; x++) {
         //dostuff with x
-        game.addPlayer(100, 100);
+        game.addPlayer(100, 100); 
     }
+    for (var x=0; x < 3; x++) {
+        game.addDuke(100,100);
+    }
+    
     cursors = game.input.keyboard.createCursorKeys();
 }
 
@@ -30,10 +34,16 @@ function update() {
             
             var move_fn = move_table[direction]
             
-            game.players[0].body[move_fn](100);
+            game.players[0].body[move_fn](1000);
+
+        for (var x=0; x < 3; x++) {
+            game.dukes[x].body[move_fn](100);
+            }  
+            }
+
         }
     }
-}
+
 
 
 
